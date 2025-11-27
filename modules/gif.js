@@ -14,15 +14,15 @@ exports.header = (inputData, configObj) => {
     let applicationExtension;
    
     gifHead = "474946383961" // "GIF89a"
-    cWidth = "9001" //400 pixels // might need to swap these values
-    cHeight = "9001" // 400 pixels // might need to swap these values *58 and 02
-    packedField1 = "91" //global color table is present, 2 bits/pixel, decrasing importance, 2 colors in table
+    cWidth = "5802" //600 pixels // might need to swap these values
+    cHeight = "5802" // 600 pixels // might need to swap these values *58 and 02
+    packedField1 = "E7" //global color table is present, 2 bits/pixel, decrasing importance, 256 colors in table
     backgroundColorAspect = "FF";
     pixelAspectRatio = "00"
     logicalScreenDescriptor = cWidth + cHeight + packedField1 + backgroundColorAspect + pixelAspectRatio;
 
     // 4 colors set in packedField1, need 4 hex values for RGB
-    globalColorTable = utilities.generateColorTableGif(4)
+    globalColorTable = utilities.generateColorTableGif(256)
     // globalColorTable = '220000FFFFFF0000FF00FF00'
 
     // application extension - includes 'NETSCAPE2.0'
@@ -41,9 +41,10 @@ exports.body = (inputData, configObj) => {
     let imageData, lzwMinCodeSize, dataSubBlock, blockSize, blockTerminator, imageDataChunk;
     let trailer;
 
-    cWidth = "9001" //600 pixels // might need to swap these values
-    cHeight = "9001" // 600 pixels // might need to swap these values *58 and 02
-    dataChunkSize = utilities.getRandomIntInclusive(10000,100000)// use this to determine how many values get grabbed at a time
+    cWidth = "5802" //600 pixels // might need to swap these values
+    cHeight = "5802" // 600 pixels // might need to swap these values *58 and 02
+    // dataChunkSize = utilities.getRandomIntInclusive(10000,100000)// use this to determine how many values get grabbed at a time
+    dataChunkSize = inputData.length
     imageData = "";
 
     // let codeSize = utilities.generateLZWGifCodeSize()
