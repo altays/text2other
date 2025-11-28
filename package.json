@@ -4,11 +4,7 @@
   "description": "Converts anything into gif and wav files with valid formats / headers. Work in progress!",
   "main": "convertFile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "gif":"node convertFile.js testFile.txt outfile -f=g -s",
-    "wav":"node convertFile.js testFile.txt outfile -f=w -s",
-    "generate": "node generateFile.js testFile.txt -s=2 -f=w -w=100",
-    "wavbody":"node separateBodyWav.js test.wav"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

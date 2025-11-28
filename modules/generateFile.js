@@ -2,7 +2,7 @@ const fs = require('fs');
 const util = require('util');
 const readFile = util.promisify(fs.readFile);
 const path = require('path');
-const utilities = require('./modules/utilities');
+const utilities = require('./utilities');
 
 // generates a file using hex characters from a file. breaks source down into groups of characters, rebuilds based on number of those groups. 
 // i.e., can break a file down into sets of 2 characters, then rebuild with 100 random sets

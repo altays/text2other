@@ -1,7 +1,7 @@
 const fs = require('fs');
 const util = require('util');
-const format = require('./modules/fileFormats');
-const utilities = require('./modules/utilities');
+const format = require('./fileFormats');
+const utilities = require('./utilities');
 const readFile = util.promisify(fs.readFile);
 const path = require('path');
 

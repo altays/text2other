@@ -2,7 +2,7 @@ const fs = require('fs');
 const util = require('util');
 const readFile = util.promisify(fs.readFile);
 const path = require('path');
-const utilities = require('./modules/utilities');
+const utilities = require('./utilities');
 
 // separates the header and body from a wav file, returns the bytes from the body
 
