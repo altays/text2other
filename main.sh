@@ -1,18 +1,30 @@
 #! /bin/bash
 
-sampleTxt=""
+sampleTxt="testFile.txt"
 sampleWav=""
 
 randomLoop=$[ ( $RANDOM % 9 )  + 2 ]
 
-if [ "$1" = "a" ] 
+if [ "$1" = "gifTransform" ] 
 then
-    echo "route a"
-    # node main.js a x $analyzeText
-elif [ "$1" = "b" ]
+    echo "route gif"
+    node convertFile.js $sampleTxt outfile -f=g -s
+elif [ "$1" = "wavTransform" ]
 then
-    echo "route b" 
-    # node main.js r sub $reconstructWords $reconstructSentences
+    echo "route wav transform" 
+    node convertFile.js testFile.txt outfile -f=w -s
+elif [ "$1" = "wavUnwrap" ]
+then
+    echo "route wav unwrap" 
+    node separateBodyWav.js test.wav
+elif [ "$1" = "generate" ]
+then
+    echo "route generate" 
+    node generateFile.js testFile.txt -s=2 -f=w -w=100
+elif [ "$1" = "i" ]
+then
+    echo "route initialize" 
+    mkdir inputs outputs/bmp outputs/jpg outputs/mp3 outputs/png outputs/wav 
 else
     echo "Please indicate a valid route."
 fi
