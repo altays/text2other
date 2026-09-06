@@ -23,7 +23,7 @@ fileRead(path.join('inputs/', readFileName)).then(data => {
 
     let versionName = utilities.nameVersion(readFileNameNoExt)
 
-    fs.writeFile("inputs/" + readFileNameNoExt + versionName + ".txt", wavBody.toString('hex'), (err) => {
+    fs.writeFile("outputs/txt/" + readFileNameNoExt + versionName + ".txt", wavBody.toString('hex'), (err) => {
         if (err) console.log(err);
         else console.log('The file has been saved!');
     });
