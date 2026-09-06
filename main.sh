@@ -1,7 +1,7 @@
 #! /bin/bash
 
 sampleTxt="testFile.txt"
-sampleWav=""
+sampleWav="outfile1788730463411-stretch.wav"
 
 randomLoop=$[ ( $RANDOM % 9 )  + 2 ]
 
@@ -16,7 +16,7 @@ then
 elif [ "$1" = "wavUnwrap" ]
 then
     echo "route wav unwrap" 
-    node modules/separateBodyWav.js outfile1788730463411-stretch.wav
+    node modules/separateBodyWav.js $sampleWav
 elif [ "$1" = "generate" ]
 then
     echo "route generate" 
@@ -24,7 +24,7 @@ then
 elif [ "$1" = "i" ]
 then
     echo "route initialize" 
-    mkdir inputs outputs outputs/bmp outputs/jpg outputs/mp3 outputs/png outputs/wav 
+    mkdir inputs outputs outputs/bmp outputs/jpg outputs/mp3 outputs/png outputs/wav outputs/gif
 else
     echo "Please indicate a valid route."
 fi
